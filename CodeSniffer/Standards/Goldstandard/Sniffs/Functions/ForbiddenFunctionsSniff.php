@@ -42,6 +42,7 @@ class Goldstandard_Sniffs_Functions_ForbiddenFunctionsSniff extends Generic_Snif
              'join'            => 'implode',    # odd alias, not deprecated
              'key_exists'      => 'array_key_exists', # odd alias, not deprecated
              'fputs'           => 'fwrite',
+             'is_writeable'    => 'is_writable', # odd alias, not deprecated (http://www.dict.cc/?s=writable)
 
              # 2) Discourages the use of our own debugging helper methods
              'Clansuite_Debug::printR' => null,
