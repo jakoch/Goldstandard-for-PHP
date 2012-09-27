@@ -3,12 +3,16 @@ Koch's Goldstandard for PHP - A Coding Standard
 
 This repository contains a set of code sniffs for PHP_CodeSniffer.
 
+*This standard enforces:*
+
+* PSR-0, PSR-1 and PSR-2
+* the removal of old and deprecated PHP functions (This is helpful, when working with legacy code.)
+* the usage of faster functions (Some premature or micro optimizations. Uh, oh! That's BAD! true?! :)
+
+*Requirements*
+
 You need PHP_CodeSniffer (http://pear.php.net/package/PHP_CodeSniffer).
 
-*Installation via PEAR*
+*Installation via PEAR* +pear install PHP_CodeSniffer+
 
-+pear install PHP_CodeSniffer+
-
-*Installation via PYRUS*
-
-+php pyrus.phar install pear/PHP_CodeSniffer+
+*Installation via PYRUS* +php pyrus.phar install pear/PHP_CodeSniffer+
