@@ -30,7 +30,7 @@ if (class_exists('PHP_CodeSniffer_Standards_CodingStandard', true) === false) {
  * @license    GPLv2+
  * @link       http://pear.php.net/package/PHP_CodeSniffer
  */
-class PHP_CodeSniffer_Standards_Clansuite_ClansuiteCodingStandard extends PHP_CodeSniffer_Standards_CodingStandard
+class PHP_CodeSniffer_Standards_Goldstandard_GoldstandardCodingStandard extends PHP_CodeSniffer_Standards_CodingStandard
 {
     /**
      * Return a list of external sniffs to include with this standard.
