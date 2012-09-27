@@ -95,15 +95,15 @@ class Goldstandard_Sniffs_Functions_ForbiddenFunctionsSniff extends Generic_Snif
              'define_syslog_variables'  => null,
              'dl'                       => null,
              'set_magic_quotes_runtime' => null,
-             'session_register'         => 'use the $_SESSION superglobal instead', # function
-             'session_unregister'       => 'use the $_SESSION superglobal instead', # function
-             'session_is_registered'    => 'use the $_SESSION superglobal instead', # function
-             'set_socket_blocking'      => 'stream_set_blocking',
-             'split'                    => 'preg_split',
-             'spliti'                   => 'preg_split with modifier i',
+             'session_register'         => 'use $_SESSION instead', # function
+             'session_unregister'       => 'use $_SESSION instead', # function
+             'session_is_registered'    => 'use $_SESSION instead', # function
+             'set_socket_blocking'      => 'use stream_set_blocking instead',
+             'split'                    => 'use preg_split instead',
+             'spliti'                   => 'use preg_split with modifier i instead',
              'sql_regcase'              => null,
              'mysql_db_query'           => 'use mysql_select_db() and mysql_query() instead',
-             'mysql_escape_string'      => 'mysql_real_escape_string',
+             'mysql_escape_string'      => 'use mysql_real_escape_string instead',
 
              # 7) deprecated ini directives / functions as of php 5.3
              # http://www.php.net/manual/en/migration53.deprecated.php
@@ -122,11 +122,19 @@ class Goldstandard_Sniffs_Functions_ForbiddenFunctionsSniff extends Generic_Snif
              'y2k_compliance'           => null, # ini
              'import_request_variables' => null, # function
              'allow_call_time_pass_reference' => null, # ini
+             'highlight.bg'             => null,
+             'safe_mode_gid'            => null,
+             'safe_mode_include_dir'    => null,
+             'safe_mode_exec_dir'       => null,
+             'safe_mode_allowed_env_vars' => null,
+             'safe_mode_protected_env_vars' => null,
              #@todo add filter for putenv("TZ=") which was removed with 5.4.0b (15.11.2011)
              'get_magic_quotes_gpc'     => null, # function
              'get_magic_quotes_runtime' => null, # function
-             'mcrypt_generic_end'       => null, # function
+             'mcrypt_generic_end'       => 'use mcrypt_generic_deinit instead', # function
              'mysql_list_dbs'           => null, # function
+             'mysql_db_query'           => 'use mysql_select_db and mysql_query',
+             'mysql_escape_string'      => 'use mysql_real_escape_string',
              # Alias Functions Cleanups
              'mysqli_bind_param'        => 'use mysqli_stmt_bind_param instead',
              'mysqli_bind_result'       => 'use mysqli_stmt_bind_result instead',
@@ -137,8 +145,9 @@ class Goldstandard_Sniffs_Functions_ForbiddenFunctionsSniff extends Generic_Snif
              'mysqli_send_long_data'    => 'use mysqli_stmt_send_long_data instead',
              'mysqli::client_encoding'  => 'use mysqli::character_set_name instead',
              'mysqli_stmt::stmt'        => null,
-             'die'                      => 'use exit',
+             'die'                      => 'use exit instead',
              'flush'                    => 'rename method from flush to send',
+             'set_socket_blocking'      => 'use stream_set_blocking instead',
 
              # 8) due to performance reasons the following methods are forbidden
              # Yes, you might call these premature optimizations, if applied!
