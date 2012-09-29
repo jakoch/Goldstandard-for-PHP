@@ -5,14 +5,26 @@ This repository contains a set of code sniffs for PHP_CodeSniffer.
 
 *This standard enforces:*
 
-* PSR-0, PSR-1 and PSR-2
+* https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md[PSR-0], https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md[PSR-1] and https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md[PSR-2]. The standards were approved by the https://github.com/php-fig/fig-standards[PHP Framework Interoperability Group].
 * the removal of old and deprecated PHP functions (This is helpful, when working with legacy code.)
-* the usage of faster functions (Some premature or micro optimizations. Uh, oh! That's BAD! true?! :)
+* the usage of faster functions. Which in fact are premature or micro optimizations. Uh, oh! That's BAD for sure :)
 
 *Requirements*
 
 You need PHP_CodeSniffer (http://pear.php.net/package/PHP_CodeSniffer).
 
-*Installation via PEAR* +pear install PHP_CodeSniffer+
+* Install PHP_CodeSniffer
+  - Installation via PEAR +pear install PHP_CodeSniffer+
+  - Installation via PYRUS +php pyrus.phar install pear/PHP_CodeSniffer+
 
-*Installation via PYRUS* +php pyrus.phar install pear/PHP_CodeSniffer+
+*Installation*
+
+* Clone this repository
+  - +git clone https://github.com/jakoch/Goldstandard-for-PHP.git Goldstandard+
+* Create a symlink PHP/CodeSniffer/Standards/Goldstandard pointing to the Goldstandard directory
+  - +ln -s [somewhere]/PHP/CodeSniffer/Standards/Goldstandard /Goldstandard+
+
+*Usage*
+
+* Use the coding standard with +phpcs --standard=Goldstandard+
+* You might also set it as default standard +phpcs --config-set default_standard Goldstandard+
