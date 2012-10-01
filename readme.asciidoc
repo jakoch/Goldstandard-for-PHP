@@ -12,14 +12,14 @@ This repository contains a set of code sniffs for PHP_CodeSniffer.
 *Requirements*
 
 PHP 5.3+
+
 PHP_CodeSniffer (http://pear.php.net/package/PHP_CodeSniffer)
+
+*Installation*
 
 * Install PHP_CodeSniffer
   - Installation via PEAR +pear install PHP_CodeSniffer+
   - Installation via PYRUS +php pyrus.phar install pear/PHP_CodeSniffer+
-
-*Installation*
-
 * Clone this repository
   - +git clone https://github.com/jakoch/Goldstandard-for-PHP.git Goldstandard+
 * Create a symlink PHP/CodeSniffer/Standards/Goldstandard pointing to the Goldstandard directory
