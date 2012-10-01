@@ -11,7 +11,8 @@ This repository contains a set of code sniffs for PHP_CodeSniffer.
 
 *Requirements*
 
-You need PHP_CodeSniffer (http://pear.php.net/package/PHP_CodeSniffer).
+PHP 5.3+
+PHP_CodeSniffer (http://pear.php.net/package/PHP_CodeSniffer)
 
 * Install PHP_CodeSniffer
   - Installation via PEAR +pear install PHP_CodeSniffer+
@@ -28,3 +29,4 @@ You need PHP_CodeSniffer (http://pear.php.net/package/PHP_CodeSniffer).
 
 * Use the coding standard with +phpcs --standard=Goldstandard+
 * You might also set it as default standard +phpcs --config-set default_standard Goldstandard+
+* If you didn't symlink or install it, then reference it by path +phpcs --standard=path/to/Goldstandard path/to/code+
