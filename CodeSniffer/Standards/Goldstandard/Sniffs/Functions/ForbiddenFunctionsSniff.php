@@ -158,6 +158,13 @@ class Goldstandard_Sniffs_Functions_ForbiddenFunctionsSniff extends Generic_Snif
             );
 
     /**
+    * If true, an error will be thrown; otherwise just a warning.
+    *
+    * @var bool
+    */
+    public $error = TRUE;
+
+    /**
      * Returns an array of tokens this test wants to listen for.
      *
      * @return array
