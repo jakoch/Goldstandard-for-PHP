@@ -7,6 +7,11 @@
         - the removal of old and deprecated PHP functions (helpful, when working with legacy code)
         - the usage of faster functions (premature / micro optimizations - Uh, oh! That's BAD! :)
   -->
+ <!-- Exclude non PHP files -->
+    <exclude-pattern>*.css</exclude-pattern>
+    <exclude-pattern>*.htm</exclude-pattern>
+    <exclude-pattern>*.html</exclude-pattern>
+    <exclude-pattern>*.js</exclude-pattern>
  <!--
     Include all sniffs in an external standard directory.
     Note that we have to specify the full path to the standard's directory,
