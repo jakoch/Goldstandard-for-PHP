@@ -30,3 +30,17 @@ PHP_CodeSniffer (http://pear.php.net/package/PHP_CodeSniffer)
 * Use the coding standard with +phpcs --standard=Goldstandard+
 * You might also set it as default standard +phpcs --config-set default_standard Goldstandard+
 * If you didn't symlink or install it, then reference it by path +phpcs --standard=path/to/Goldstandard path/to/code+
+
+*IDE Integration*
+
+*NetBeans*
+
+        http://plugins.netbeans.org/plugin/40282/phpmd-php-codesniffer-plugin
+
+*PHPStorm*
+
+        http://www.jetbrains.com/phpstorm/webhelp/using-php-code-sniffer-tool.html
+
+*Zend Studio*
+
+        http://files.zend.com/help/Zend-Studio/content/working_with_php_codesniffer.htm
