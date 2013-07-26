@@ -1,0 +1,21 @@
+{
+    "name": "jakoch/Goldstandard",
+    "description": "Koch's Goldstandard for PHP - A Coding Standard",
+    "license": "GPL-2.0+",
+    "keywords": ["ruleset", "codesniffer", "phpcs", "qa", "coding standard"],
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jens-André Koch",
+            "email": "jakoch@web.de"
+        }
+    ],
+    "support": {
+        "irc": "irc://irc.freenode.org/koch",
+        "source": "https://github.com/jakoch/Goldstandard/",
+        "issues": "https://github.com/jakoch/Goldstandard/issues/"
+    },
+    "require-dev-not-now": {
+        "squizlabs/php_codesniffer": ">=1.4.2"
+    }
+}
