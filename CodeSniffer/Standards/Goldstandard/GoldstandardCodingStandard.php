@@ -163,6 +163,7 @@ class PHP_CodeSniffer_Standards_Goldstandard_GoldstandardCodingStandard extends 
             #'Generic/Sniffs/PHP/DisallowShortOpenTagSniff.php',
             # same as above, but a bit more strict
             dirname(__FILE__) . '/Sniffs/PHP/OpeningClosingTagSniff.php',
+            dirname(__FILE__) . '/Sniffs/PHP/EnforceShortArraySyntax.php',
 
         # CSS
 
