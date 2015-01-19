@@ -146,7 +146,7 @@ class Goldstandard_Sniffs_Functions_ForbiddenFunctionsSniff extends Generic_Snif
              'mysqli::client_encoding'  => 'use mysqli::character_set_name instead',
              'mysqli_stmt::stmt'        => null,
              'die'                      => 'use exit instead',
-             'flush'                    => 'rename method from flush to send',
+             'flush'                    => 'rename method from flush to send', // only toilets are flushed
              'set_socket_blocking'      => 'use stream_set_blocking instead',
 
              # 8) due to performance reasons the following methods are forbidden
