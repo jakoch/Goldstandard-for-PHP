@@ -132,6 +132,7 @@ class Goldstandard_Sniffs_Functions_ForbiddenFunctionsSniff extends Generic_Snif
              'get_magic_quotes_gpc'     => null, # function
              'get_magic_quotes_runtime' => null, # function
              'mcrypt_generic_end'       => 'use mcrypt_generic_deinit instead', # function
+             'mysql_'                   => 'mysql is deprecated, use mysqli or PDO',
              'mysql_list_dbs'           => null, # function
              'mysql_db_query'           => 'use mysql_select_db and mysql_query',
              'mysql_escape_string'      => 'use mysql_real_escape_string',
@@ -148,6 +149,23 @@ class Goldstandard_Sniffs_Functions_ForbiddenFunctionsSniff extends Generic_Snif
              'die'                      => 'use exit instead',
              'flush'                    => 'rename method from flush to send',
              'set_socket_blocking'      => 'use stream_set_blocking instead',
+             'xsl.security_prefs'       => 'use XsltProcessor::setSecurityPrefs instead',
+
+             # deprecated function since PHP 5.5
+             'mcrypt_ecb'               => 'use mcrypt_encrypt and mcrypt_decrypt instead',
+             'mcrypt_cbc'               => 'use mcrypt_encrypt and mcrypt_decrypt instead',
+             'mcrypt_cfb'               => 'use mcrypt_encrypt and mcrypt_decrypt instead',
+             'mcrypt_ofb'               => 'use mcrypt_encrypt and mcrypt_decrypt instead',
+             'datefmt_set_timezone_id'  => 'use datefmt_set_timezone or IntlDateFormatter::setTimeZone instead',
+             'setTimeZoneID'            => 'use datefmt_set_timezone or IntlDateFormatter::setTimeZone instead',
+
+             # deprecated ini directives since PHP 5.6
+             'icon.input_encoding'      => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
+             'iconv.output_encoding'    => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
+             'iconv.internal_encoding'  => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
+             'mbstring.http_input'      => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
+             'mbstring.http_output'     => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
+             'mbstring.internal_encoding' => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
 
              # 8) due to performance reasons the following methods are forbidden
              # Yes, you might call these premature optimizations, if applied!
