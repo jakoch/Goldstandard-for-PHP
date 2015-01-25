@@ -1,7 +1,7 @@
 Koch's Goldstandard for PHP - A Coding Standard
 -----------------------------------------------
 
-This repository contains a set of code sniffs for PHP_CodeSniffer.
+This repository contains a set of code sniffs for PHP_CodeSniffer. image:https://travis-ci.org/jakoch/Goldstandard-for-PHP.svg["Build Status", link="https://travis-ci.org/jakoch/Goldstandard-for-PHP"]
 
 *This standard enforces:*
 
