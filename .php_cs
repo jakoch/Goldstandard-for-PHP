@@ -40,5 +40,5 @@ return Symfony\CS\Config\Config::create()
         'ordered_use',
         'strict',
         'strict_param',
-        'short_array_syntax'
+        /*'short_array_syntax'*/
     ));
