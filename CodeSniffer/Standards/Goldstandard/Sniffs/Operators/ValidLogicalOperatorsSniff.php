@@ -15,7 +15,6 @@
  */
 class Goldstandard_Sniffs_Operators_ValidLogicalOperatorsSniff implements PHP_CodeSniffer_Sniff
 {
-
     /**
      * Returns an array of tokens this test wants to listen for.
      *
@@ -35,13 +34,12 @@ class Goldstandard_Sniffs_Operators_ValidLogicalOperatorsSniff implements PHP_Co
      *
      * @param PHP_CodeSniffer_File $phpcsFile The current file being scanned.
      * @param int                  $stackPtr  The position of the current token in the
-     *                                         stack passed in $tokens.
+     *                                        stack passed in $tokens.
      *
      * @return void
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
-
         $tokens = $phpcsFile->getTokens();
 
         $replacements = array(
@@ -56,7 +54,7 @@ class Goldstandard_Sniffs_Operators_ValidLogicalOperatorsSniff implements PHP_Co
         }
 
         $replacement = $replacements[$operator];
-        $error = "Logical operator \"$operator\" is prohibited; use \"$replacement\" instead.";
+        $error       = "Logical operator \"$operator\" is prohibited; use \"$replacement\" instead.";
         $phpcsFile->addError($error, $stackPtr);
     }
 }

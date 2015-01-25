@@ -23,7 +23,7 @@ class Goldstandard_Sniffs_Commenting_OneLineCommentSniff implements PHP_CodeSnif
     public function register()
     {
         return array(
-            T_COMMENT
+            T_COMMENT,
         );
     }
 
@@ -32,11 +32,11 @@ class Goldstandard_Sniffs_Commenting_OneLineCommentSniff implements PHP_CodeSnif
      *
      * @param PHP_CodeSniffer_File $phpcsFile File being scanned
      * @param int                  $stackPtr  Position of the current token in the stack
-     *        passed in $tokens.
+     *                                        passed in $tokens.
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
-        $tokens = $phpcsFile->getTokens();
+        $tokens  = $phpcsFile->getTokens();
         $content = $tokens[$stackPtr]['content'];
 
         if (preg_match('[#]', $content) === true) {

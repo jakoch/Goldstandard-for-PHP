@@ -16,7 +16,6 @@ if (class_exists('PHP_CodeSniffer_Standards_AbstractPatternSniff', true) === fal
  */
 class Goldstandard_Sniffs_ControlStructures_ControlSignatureSniff extends PHP_CodeSniffer_Standards_AbstractPatternSniff
 {
-
     public function __construct()
     {
         parent::__construct(true);

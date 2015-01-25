@@ -32,7 +32,7 @@ class Goldstandard_Sniffs_PHP_NonStaticMagicMethodsSniff implements PHP_CodeSnif
         '__set',
         '__isset',
         '__unset',
-        '__call'
+        '__call',
     );
 
     /**
@@ -43,14 +43,14 @@ class Goldstandard_Sniffs_PHP_NonStaticMagicMethodsSniff implements PHP_CodeSnif
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
-        $tokens = $phpcsFile->getTokens();
+        $tokens        = $phpcsFile->getTokens();
         $functionToken = $phpcsFile->findNext(T_FUNCTION, $stackPtr);
         if ($functionToken === false) {
             return;
         }
 
         $nameToken = $phpcsFile->findNext(T_STRING, $functionToken);
-        if (in_array($tokens[$nameToken]['content'], $this->magicMethods) === false) {
+        if (in_array($tokens[$nameToken]['content'], $this->magicMethods, true) === false) {
             return;
         }
 
@@ -59,7 +59,7 @@ class Goldstandard_Sniffs_PHP_NonStaticMagicMethodsSniff implements PHP_CodeSnif
             return;
         }
 
-        if ($tokens[$scopeToken]['type'] != 'T_PUBLIC') {
+        if ($tokens[$scopeToken]['type'] !== 'T_PUBLIC') {
             $error = "As of PHP 5.3 Magic methods must be public!";
             $phpcsFile->addError($error, $stackPtr);
         }

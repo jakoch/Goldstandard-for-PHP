@@ -45,8 +45,8 @@ class Goldstandard_Sniffs_Functions_ForbiddenFunctionsSniff extends Generic_Snif
              'is_writeable'    => 'is_writable', # odd alias, not deprecated (http://www.dict.cc/?s=writable)
 
              # 2) Discourages the use of our own debugging helper methods
-             'Clansuite_Debug::printR' => null,
-             'clansuite_debug::printr' => null,
+             'Clansuite_Debug::printR'  => null,
+             'clansuite_debug::printr'  => null,
              'Clansuite_Debug::firebug' => null,
              'clansuite_debug::firebug' => null,
 
@@ -117,17 +117,17 @@ class Goldstandard_Sniffs_Functions_ForbiddenFunctionsSniff extends Generic_Snif
              'enable_dl'                => null,
 
              ## 7b) deprecated ini directives / functions as of php 5.4
-             'session.bug_compat_warn'  => null, # ini
-             'session.bug_compat42'     => null, # ini
-             'y2k_compliance'           => null, # ini
-             'import_request_variables' => null, # function
+             'session.bug_compat_warn'        => null, # ini
+             'session.bug_compat42'           => null, # ini
+             'y2k_compliance'                 => null, # ini
+             'import_request_variables'       => null, # function
              'allow_call_time_pass_reference' => null, # ini
-             'highlight.bg'             => null,
-             'safe_mode_gid'            => null,
-             'safe_mode_include_dir'    => null,
-             'safe_mode_exec_dir'       => null,
-             'safe_mode_allowed_env_vars' => null,
-             'safe_mode_protected_env_vars' => null,
+             'highlight.bg'                   => null,
+             'safe_mode_gid'                  => null,
+             'safe_mode_include_dir'          => null,
+             'safe_mode_exec_dir'             => null,
+             'safe_mode_allowed_env_vars'     => null,
+             'safe_mode_protected_env_vars'   => null,
              #@todo add filter for putenv("TZ=") which was removed with 5.4.0b (15.11.2011)
              'get_magic_quotes_gpc'     => null, # function
              'get_magic_quotes_runtime' => null, # function
@@ -160,11 +160,11 @@ class Goldstandard_Sniffs_Functions_ForbiddenFunctionsSniff extends Generic_Snif
              'setTimeZoneID'            => 'use datefmt_set_timezone or IntlDateFormatter::setTimeZone instead',
 
              # deprecated ini directives since PHP 5.6
-             'icon.input_encoding'      => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
-             'iconv.output_encoding'    => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
-             'iconv.internal_encoding'  => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
-             'mbstring.http_input'      => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
-             'mbstring.http_output'     => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
+             'icon.input_encoding'        => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
+             'iconv.output_encoding'      => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
+             'iconv.internal_encoding'    => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
+             'mbstring.http_input'        => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
+             'mbstring.http_output'       => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
              'mbstring.internal_encoding' => 'use php.input_encoding, php.internal_encoding and php.output_encoding instead',
 
              # 8) due to performance reasons the following methods are forbidden
@@ -176,11 +176,11 @@ class Goldstandard_Sniffs_Functions_ForbiddenFunctionsSniff extends Generic_Snif
             );
 
     /**
-    * If true, an error will be thrown; otherwise just a warning.
-    *
-    * @var bool
-    */
-    public $error = TRUE;
+     * If true, an error will be thrown; otherwise just a warning.
+     *
+     * @var bool
+     */
+    public $error = true;
 
     /**
      * Returns an array of tokens this test wants to listen for.

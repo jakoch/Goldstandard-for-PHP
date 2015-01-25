@@ -30,19 +30,18 @@ class Goldstandard_Sniffs_Commenting_PackageAnnotationSniff implements PHP_CodeS
      * @param PHP_CodeSniffer_File $phpcsFile Current file being sniffed
      * @param type                 $stackPtr  Current stack pointer
      */
-    public function process( PHP_CodeSniffer_File $phpcsFile, $stackPtr )
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
-        $index = $this->getDocStart( $tokens );
+        $index  = $this->getDocStart($tokens);
 
-        if ($index == false) {
-            $phpcsFile->addError( 'Missing PHPDoc for class', $stackPtr );
+        if ($index === false) {
+            $phpcsFile->addError('Missing PHPDoc for class', $stackPtr);
         } else {
-            if ( !$this->classIsNamespaced($tokens) ) {
-                $this->sniffForPackage( $phpcsFile, $tokens, $index, $stackPtr );
+            if (!$this->classIsNamespaced($tokens)) {
+                $this->sniffForPackage($phpcsFile, $tokens, $index, $stackPtr);
             }
         }
-
     }
 
     /**
@@ -52,18 +51,16 @@ class Goldstandard_Sniffs_Commenting_PackageAnnotationSniff implements PHP_CodeS
      *
      * @return bool
      */
-    protected function classIsNamespaced( $tokens )
+    protected function classIsNamespaced($tokens)
     {
-
         foreach ($tokens as $token => $value) {
-
-            if ($value['type'] == 'T_NAMESPACE') {
+            if ($value['type'] === 'T_NAMESPACE') {
                 return true;
             }
 
             // fail fast, if we do not hit the namespace token and it's a string,
             // then the class is not namespaced
-            if ($value['type'] == 'T_STRING') {
+            if ($value['type'] === 'T_STRING') {
                 break;
             }
         }
@@ -77,19 +74,19 @@ class Goldstandard_Sniffs_Commenting_PackageAnnotationSniff implements PHP_CodeS
      * @param type                 $index     Token index
      * @param type                 $stackPtr  Current stack pointer
      */
-    protected function sniffForPackage( PHP_CodeSniffer_File $phpcsFile, array $tokens, $index, $stackPtr )
+    protected function sniffForPackage(PHP_CodeSniffer_File $phpcsFile, array $tokens, $index, $stackPtr)
     {
-        while ( true && isset($tokens[$index]) ) {
-            if ( strstr($tokens[$index]['content'],'@package') !== false ) {
+        while (true && isset($tokens[$index])) {
+            if (strstr($tokens[$index]['content'], '@package') !== false) {
                 return;
             }
 
-            if ($tokens[++$index]['type'] != 'T_DOC_COMMENT') {
+            if ($tokens[++$index]['type'] !== 'T_DOC_COMMENT') {
                 break;
             }
         }
 
-        $phpcsFile->addError( 'Missing @package annotation for class', $stackPtr );
+        $phpcsFile->addError('Missing @package annotation for class', $stackPtr);
     }
 
     /**
@@ -99,11 +96,10 @@ class Goldstandard_Sniffs_Commenting_PackageAnnotationSniff implements PHP_CodeS
      *
      * @return int
      */
-    private function getDocStart( array $tokens )
+    private function getDocStart(array $tokens)
     {
-
         foreach ($tokens as $index => $token) {
-            if ($token['type'] == 'T_DOC_COMMENT') {
+            if ($token['type'] === 'T_DOC_COMMENT') {
                 return $index;
             }
         }

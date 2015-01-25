@@ -23,9 +23,7 @@ class Goldstandard_Sniffs_Whitespace_ConcatenationWithSpacesSniff implements PHP
         $tokens = $phpcsFile->getTokens();
 
         if ($tokens[($stackPtr - 1)]['code'] !== T_WHITESPACE
-        or  $tokens[($stackPtr + 1)]['code'] !== T_WHITESPACE)
-        {
-
+        or  $tokens[($stackPtr + 1)]['code'] !== T_WHITESPACE) {
             $phpcsFile->addError('Concatenation operator must be surrounded by whitespace', $stackPtr);
         }
     }

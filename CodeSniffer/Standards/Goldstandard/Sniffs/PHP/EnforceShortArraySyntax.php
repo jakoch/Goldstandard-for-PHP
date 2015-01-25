@@ -60,7 +60,5 @@ class Goldstandard_Sniffs_PHP_EnforceShortArraySyntaxSniff implements PHP_CodeSn
             $data  = array(trim($tokens[$stackPtr]['content']));
             $phpcsFile->addError($error, $stackPtr, '', $data);
         }
-
     }
-
 }

@@ -30,7 +30,6 @@
  */
 class Goldstandard_Sniffs_CodeAnalysis_UnnecessaryFinalModifierSniff implements Php_CodeSniffer_Sniff
 {
-
     /**
      * Registers the tokens that this sniff wants to listen for.
      *
@@ -53,7 +52,7 @@ class Goldstandard_Sniffs_CodeAnalysis_UnnecessaryFinalModifierSniff implements 
     public function process(PHP_CodeSniffer_File $phpcsfile, $stackptr)
     {
         $tokens = $phpcsfile->gettokens();
-        $token = $tokens[$stackptr];
+        $token  = $tokens[$stackptr];
 
         // Skip for-statements without body.
         if (isset($token['scope_opener']) === false) {
@@ -69,7 +68,7 @@ class Goldstandard_Sniffs_CodeAnalysis_UnnecessaryFinalModifierSniff implements 
         }
 
         $next = ++$token['scope_opener'];
-        $end = --$token['scope_closer'];
+        $end  = --$token['scope_closer'];
 
         for (; $next <= $end; ++$next) {
             if ($tokens[$next]['code'] === T_FINAL) {

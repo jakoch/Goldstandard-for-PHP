@@ -49,7 +49,7 @@ class Goldstandard_Sniffs_Operators_DeprecatedNewReferenceSniff implements PHP_C
     {
         $tokens = $phpcsFile->getTokens();
 
-        if ($tokens[$stackPtr - 1]['type'] == 'T_BITWISE_AND' or $tokens[$stackPtr - 2]['type'] == 'T_BITWISE_AND') {
+        if ($tokens[$stackPtr - 1]['type'] === 'T_BITWISE_AND' or $tokens[$stackPtr - 2]['type'] === 'T_BITWISE_AND') {
             $error = 'Assigning the return value of new by reference is deprecated in PHP 5.3';
             $phpcsFile->addError($error, $stackPtr);
         }

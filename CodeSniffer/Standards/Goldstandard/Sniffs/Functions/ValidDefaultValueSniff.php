@@ -15,7 +15,6 @@
  */
 class Goldstandard_Sniffs_Functions_ValidDefaultValueSniff implements PHP_CodeSniffer_Sniff
 {
-
     /**
      * Returns an array of tokens this test wants to listen for.
      *
@@ -78,6 +77,5 @@ class Goldstandard_Sniffs_Functions_ValidDefaultValueSniff implements PHP_CodeSn
         }
 
         return true;
-
     }
 }
