@@ -1,7 +1,7 @@
-Koch's Goldstandard for PHP - A Coding Standard
+Koch's Goldstandard for PHP - A Coding Standard 
 -----------------------------------------------
 
-This repository contains a set of code sniffs for PHP_CodeSniffer.
+This repository contains a set of code sniffs for PHP_CodeSniffer. image:https://scrutinizer-ci.com/g/jakoch/phpunit-headless/badges/quality-score.png?b=master["Scrutinizer Code Quality", link="https://scrutinizer-ci.com/g/jakoch/Goldstandard-for-PHP/?branch=master"]
 
 *This standard enforces:*
 
